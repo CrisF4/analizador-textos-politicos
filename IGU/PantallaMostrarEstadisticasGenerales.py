@@ -3,7 +3,7 @@ import tkinter as tk
 class PantallaMostrarEstadisticasGenerales(tk.Toplevel):
     def __init__(self, parent):
         super().__init__()
-        self.title('Ventana 2')
+        self.title('Mostrar Estadísticas Generales')
         self.parent = parent
         self.parent.withdraw()
         self.protocol("WM_DELETE_WINDOW", self.on_close)

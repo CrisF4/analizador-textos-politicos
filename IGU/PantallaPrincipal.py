@@ -8,7 +8,7 @@ from PantallaMostra_CompararGraficas import PantallaMostrar_CompararGraficas
 class MainApp(tk.Tk):
     def __init__(self):
         super().__init__()
-        self.title('Ventana Principal')
+        self.title('Pantalla Principal')
 
         # Centrar la ventana
         window_width = 500
@@ -46,21 +46,6 @@ class MainApp(tk.Tk):
 
     def ir_pantalla_mostrar_comparar_graficas(self):
         self.new_window = PantallaMostrar_CompararGraficas(self)
-
-#class Window1(tk.Toplevel):
-#    def __init__(self):
-#        super().__init__()
-#        self.title('Ventana 1')
-
-#class Window2(tk.Toplevel):
-#    def __init__(self):
-#        super().__init__()
-#        self.title('Ventana 2')
-
-#class Window3(tk.Toplevel):
-#    def __init__(self):
-#        super().__init__()
-#        self.title('Ventana 3')
 
 if __name__ == "__main__":
     app = MainApp()
