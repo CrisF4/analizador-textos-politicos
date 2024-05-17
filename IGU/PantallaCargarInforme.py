@@ -2,6 +2,13 @@ import tkinter as tk
 from tkinter import filedialog
 import os
 import shutil
+import sys
+# Añadir el directorio raíz del proyecto al sys.path
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
+# Ahora puedes importar 'validar_datos' desde 'Control.CargarInforme'
+from Control.CargarInforme import validar_datos
+
 
 class PantallaCargarInforme(tk.Toplevel):
     def __init__(self, parent):
@@ -73,7 +80,9 @@ class PantallaCargarInforme(tk.Toplevel):
             presidente = self.presidente_entry.get().strip()
             anio = self.anio_entry.get().strip()
 
-            if presidente and anio:
+            # Validar las entradas del usuario
+            valido, mensaje = validar_datos(presidente, anio, archivo)
+            if valido:
                 iniciales = ''.join([nombre[0] for nombre in presidente.split()[:2]]).upper()
                 nuevo_nombre = f"{anio}_informe_{iniciales}.pdf"
 
@@ -115,4 +124,6 @@ if __name__ == "__main__":
     root.withdraw()
     app = PantallaCargarInforme(root)
     root.mainloop()
+    
+
 
