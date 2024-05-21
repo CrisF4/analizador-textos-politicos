@@ -1,66 +1,52 @@
 import tkinter as tk
-from tkinter import filedialog
 from tkinter import ttk
 
-def salir():
-    ventana.destroy()
+from PantallaCargarInforme import PantallaCargarInforme
+from PantallaMostrarEstadisticasGenerales import PantallaMostrarEstadisticasGenerales
+from PantallaMostrarCompararGraficas import PantallaMostrarCompararGraficas
 
-def cargar_archivos():
-    archivos_seleccionados = filedialog.askopenfilenames()
-    for archivo in archivos_seleccionados:
-        print("Archivo seleccionado:", archivo)
+class MainApp(tk.Tk):
+    def __init__(self):
+        super().__init__()
+        self.title('Pantalla Principal')
 
-def regresar():
-    ventana.geometry('500x500')
-    boton_cargar.pack_forget()
-    boton_regresar.pack_forget()
-    titulo.pack(pady=15)
-    boton1.pack(pady=15)
-    boton2.pack(pady=15)
-    boton3.pack(pady=15)
-    boton4.pack(pady=15)
+        # Centrar la ventana
+        window_width = 500
+        window_height = 500
 
-def mostrar_opciones():
-    ventana.geometry('500x100')
-    titulo.pack_forget()
-    boton1.pack_forget()
-    boton2.pack_forget()
-    boton3.pack_forget()
-    boton4.pack_forget()
-    boton_cargar.pack(pady=10)
-    boton_regresar.pack()
+        # Obtener las dimensiones de la pantalla
+        screen_width = self.winfo_screenwidth()
+        screen_height = self.winfo_screenheight()
 
-# Crear la ventana principal
-ventana = tk.Tk()
-ventana.title("Analizador de informes políticos")
-estilo = ttk.Style()
+        # Calcular la posición de la ventana
+        position_top = int(screen_height / 2 - window_height / 2)
+        position_right = int(screen_width / 2 - window_width / 2)
 
-ventana.geometry('500x500')
-#titulo
-titulo = tk.Label(ventana, text='Analizador de informes políticos', padx=15, pady=15, font=('Helvetica', 20), fg='Blue')
+        # Posicionar la ventana
+        self.geometry(f'{window_width}x{window_height}+{position_right}+{position_top}')
+        self.resizable(False, False)
 
+        self.button1 = ttk.Button(self, text="Cargar informe", command=self.ir_pantalla_cargar_informe)
+        self.button1.pack(pady=20)
 
+        self.button2 = ttk.Button(self, text="Mostrar estadisticas generales", command=self.ir_pantalla_mostrar_estadisticas_generales)
+        self.button2.pack(pady=20)
 
+        self.button3 = ttk.Button(self, text="Mostra/Comparar graficas", command=self.ir_pantalla_mostrar_comparar_graficas)
+        self.button3.pack(pady=20)
 
-# Crear los cuatro botones principales
-boton1 = tk.Button(ventana, text="Cargar informes", command=mostrar_opciones, padx=60, pady=15)
-boton2 = tk.Button(ventana, text="Mostrar estadísticas generales", command=lambda: print("Botón 2 presionado"), padx=60, pady=20)
-boton3 = tk.Button(ventana, text="Mostrar/Comparar gráficas", command=lambda: print("Botón 3 presionado"), padx=60, pady=20)
-boton4 = tk.Button(ventana, text="Salir del programa", command=salir, padx=60, pady=20)
+        self.quit_button = ttk.Button(self, text="Salir", command=self.quit)
+        self.quit_button.pack(pady=20)
+        
+    def ir_pantalla_cargar_informe(self):
+        self.new_window = PantallaCargarInforme(self)
 
-# Crear los botones de cargar archivos y regresar, pero inicialmente ocultos
-boton_cargar = tk.Button(ventana, text="Cargar Archivos", command=cargar_archivos, padx=110, pady=10)
-boton_regresar = tk.Button(ventana, text="Regresar", command=regresar)
-boton_cargar.pack_forget()
-boton_regresar.pack_forget()
+    def ir_pantalla_mostrar_estadisticas_generales(self):
+        self.new_window = PantallaMostrarEstadisticasGenerales(self)
 
-# Alinear los botones al centro
-titulo.pack(pady=15)
-boton1.pack(pady=15)
-boton2.pack(pady=15)
-boton3.pack(pady=15)
-boton4.pack(pady=15)
+    def ir_pantalla_mostrar_comparar_graficas(self):
+        self.new_window = PantallaMostrarCompararGraficas(self)
 
-
-# Ejecutar el bucle principal de la interfaz gráfica
-ventana.mainloop()
+if __name__ == "__main__":
+    app = MainApp()
+    app.mainloop()
