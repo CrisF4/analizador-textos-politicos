@@ -1,5 +1,0 @@
-Cosas que necesitan implementarse en el sistema:
-
-1. Validador de existencia de archivos csv (para no estar creando csv nuevos cada vez que se ejecuta el programa)
-2. Integrar las funcionalidades del sistema en una GUI de tal forma que se puedan leer varias graficas a la vez en una ventana segun el usuario
-3. Añadir funcion para cambiar los metadatos de los pdf (titulo, autor, presidente, año), asi como para cambiar el nombre del pdf segun los metadatos. Hacer concordar el nombre de los archivos segun el formato que se tiene el la carpeta "Informes presidenciales" (_año_informe_Primeras dos iniciales del presidente.pdf). Ejemplo: _1989_informe_CS.pdf.
