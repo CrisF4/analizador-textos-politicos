@@ -3,6 +3,18 @@ import nltk
 import string
 from collections import Counter
 from nltk.tokenize import word_tokenize
+import os
+
+def validar_datos(presidente, anio):
+    # Validar que el nombre del presidente contenga solo letras y espacios
+    if not presidente.replace(" ", "").isalpha():
+        raise ValueError("El nombre del presidente solo debe contener letras y espacios.")
+    
+    # Validar que el año sea un número entero
+    if not anio.isdigit():
+        raise ValueError("El año debe ser un número entero.")
+    
+    return True
 
 def obtener_texto(pdf_path):
     texto = ""
