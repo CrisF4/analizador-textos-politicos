@@ -23,6 +23,6 @@ IMPORTANTE: Al momento de utlizar el sistema, ABRA LA CARPETA 'analizador-textos
 
 <h2>Funcionalidaes</h2>
 Este sistema permite ingresar documentos en formato pdf (en este caso, informes presidenciales) para su respectivo procesamiento de datos. Este nos dara:
-1. Estadisticas generales, como el número total de palabras, total de palabras distintas, palabras clave y promedio de palabras por documento.
-2. Ver gráficas tales como de Dispersión lexica, WordClouds, Gráficas de barras y series de tiempo.
+1. Estadisticas generales, como el número total de palabras, total de palabras distintas, palabras clave y promedio de palabras por documento
+2. Ver gráficas tales como de Dispersión lexica, WordClouds, Gráficas de barras y series de tiempo
 De esta forma, se podra hacer un analisis mas profundo sobre cada presidente y tambien da la posibilidad de comparar tendencias, patrones y tematicas que hay entre presidentes.
