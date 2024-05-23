@@ -1,4 +1,4 @@
-# analizador-textos-politicos
+# Analizador de textos políticos
 Proyecto final de ingeniería de software
 Este es una version funcional del analizador de textos politicos hecho en python utilizando las siguientes librerias:
 1. MyMUPdf
