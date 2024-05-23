@@ -1,5 +1,5 @@
 # Analizador de textos políticos
-//Proyecto final de ingeniería de software
+
 Este es una version funcional del analizador de textos politicos hecho en python utilizando las siguientes librerias:
 1. MyMUPdf
 2. pandas
@@ -20,3 +20,9 @@ En caso de no tener alguna de las librerias, instalar de la siguiente forma:
 4. Presionar Enter y esperar a que se instale dicha libreria
 
 IMPORTANTE: Al momento de utlizar el sistema, ABRA LA CARPETA 'analizador-textos-politicos' COMO CARPETA RAIZ DENTRO DE VISUAL STUDIO CODE.De esta forma, no tendra ningun inconveniente con respecto a las rutas relaitvas de los documentos utilizados.
+
+<h2>Funcionalidaes</h2>
+Este sistema permite ingresar documentos en formato pdf (en este caso, informes presidenciales) para su respectivo procesamiento de datos. Este nos dara:
+- Estadisticas generales, como el número total de palabras, total de palabras distintas, palabras clave y promedio de palabras por documento.
+- Ver gráficas tales como de Dispersión lexica, WordClouds, Gráficas de barras y series de tiempo.
+De esta forma, se podra hacer un analisis mas profundo sobre cada presidente y tambien da la posibilidad de comparar tendencias, patrones y tematicas que hay entre presidentes.
